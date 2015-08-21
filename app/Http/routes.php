@@ -21,6 +21,11 @@ Route::get('/ticket/{slug?}/edit', 'TicketsController@edit');
 Route::post('/ticket/{slug?}/edit','TicketsController@update');
 Route::post('/ticket/{slug?}/delete','TicketsController@destroy');
 Route::post('/comment', 'CommentsController@newComment');
+Route::get('users/register', 'Auth\AuthController@getRegister');
+Route::post('users/register', 'Auth\AuthController@postRegister');
+Route::get('users/logout', 'Auth\AuthController@getLogout');
+Route::get('users/login', 'Auth\AuthController@getLogin');
+Route::post('users/login', 'Auth\AuthController@postLogin');
 Route::get('sendemail', function () {
 
     $data = array(
